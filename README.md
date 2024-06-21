@@ -62,7 +62,7 @@ $`pipenv install django==3.0`
 
 Lets begin our project by starting our project and installing a books app, type below commands in terminal.
 
-(django_project)$`django-admin startproject ecom_project .` (do not avoid this period)
+(django_project)$`django-admin startproject django_bookstore .` (do not avoid this period)
 
 (django_project)$`python manage.py startapp books`
 
@@ -70,7 +70,7 @@ Now, open your favourite IDE and locate this project directory. (Im using VS Cod
 
 * settings.py 
 
-open your ecom_project folder, in here you will find settings.py file (open it). Go to Installed app section and mention your app name there (as shown below).
+open your django_bookstore folder, in here you will find settings.py file (open it). Go to Installed app section and mention your app name there (as shown below).
 
 
 	INSTALLED_APPS = [
@@ -240,14 +240,14 @@ Note: A lot of things is going on here, ill try keep things as simple as possibl
 
 ### urls
 
-Now to make our class based views work we need url routing. By default we have a single urls.py file in our ecom_project directory and not in books app. So lets create a urls.py file in our app (why so ? so that django can easily find which url is working for which app, therfore instead of putting all urls in a single file its better to create seperate urls.py file for each app). Inside your books app create a new urls.py file. (you can do it by using your IDE or by following below code)
+Now to make our class based views work we need url routing. By default we have a single urls.py file in our django_bookstore directory and not in books app. So lets create a urls.py file in our app (why so ? so that django can easily find which url is working for which app, therfore instead of putting all urls in a single file its better to create seperate urls.py file for each app). Inside your books app create a new urls.py file. (you can do it by using your IDE or by following below code)
 
 for linux users
 
 $touch books/urls.py
 
 
-Before putting some code in this file go to ecom_project folder and open urls.py file. Update this file in the follwing manner
+Before putting some code in this file go to django_bookstore folder and open urls.py file. Update this file in the follwing manner
 
 	from django.contrib import admin
 	from django.urls import path, include # changes
@@ -286,13 +286,13 @@ Also, the BookDetailView uses this <int:pk> or id to show the details of a parti
 
 ### templates
 
-Its time for templates now, if you remember we used template_name in our class based views. The content on the webpage basically comes from templates (actually html files) and the views holds the overall functionality in short. First lets create a template folder, your templates folder should be outside your ecom_project folder, forex: take a look at my <a href = "https://github.com/YashMarmat/django-ecommece-bookstore">repository</a>. Mean place the folder just below the ecom_project folder (note: there are many ways to use templates in django but for now im using this approach).
+Its time for templates now, if you remember we used template_name in our class based views. The content on the webpage basically comes from templates (actually html files) and the views holds the overall functionality in short. First lets create a template folder, your templates folder should be outside your django_bookstore folder, forex: take a look at my <a href = "https://github.com/YashMarmat/django-ecommece-bookstore">repository</a>. Mean place the folder just below the django_bookstore folder (note: there are many ways to use templates in django but for now im using this approach).
 
 * or just follow below command
 
 (django_project)$`mkdir templates`
 
-now open your settings.py file from ecom_project folder and update the Template section in the following manner.
+now open your settings.py file from django_bookstore folder and update the Template section in the following manner.
 
 	TEMPLATES = [
 	    {
@@ -336,7 +336,7 @@ At this point anyone can buy books from our online bookstore without creating an
 
 Now this class is working on 'LoginRequiredMixin' it basically makes sure that before visiting the checkout page the user must login (means the user needs to have an account on our website before purchasing any books, if the user is not logged in then the user will be redirected to page which contains two options --> Log In and Sign Up). More on Signup in short.
 
-now to make login work go to the urls.py file of ecom_project and open it. Update the code as shown below,
+now to make login work go to the urls.py file of django_bookstore and open it. Update the code as shown below,
 
 	from django.contrib import admin
 	from django.urls import path, include
@@ -370,7 +370,7 @@ no updation just for illustation !
 	] 
 
 
-Now to make this work open the setting.py file (present inside the ecom_project folder). Put the below codes at the bottom of the file.
+Now to make this work open the setting.py file (present inside the django_bookstore folder). Put the below codes at the bottom of the file.
 
 
 	LOGIN_REDIRECT_URL = 'list'   # controls login
@@ -389,7 +389,7 @@ Lets think about login again, a user can login only if they have an account on o
 
 (django_project)$`python manage.py startapp accounts`
 
-To let django know about this app lets update settings.py file (inside ecom_project). Update the file in following manner
+To let django know about this app lets update settings.py file (inside django_bookstore). Update the file in following manner
 
 	INSTALLED_APPS = [
 	    'django.contrib.admin',
@@ -453,7 +453,7 @@ put the below code in this file
 	]
 
 
-Now, as we did earlier we let django know we are using a seperate urls.py file for our accounts app. Update the urls.py file of ecom_project in the following manner,
+Now, as we did earlier we let django know we are using a seperate urls.py file for our accounts app. Update the urls.py file of django_bookstore in the following manner,
 
 
 	from django.contrib import admin
@@ -491,7 +491,7 @@ Ok, to use some static css in django we need to update few thing in our settings
 	]
 
 
-* now create a static folder and place it outside the ecom_project folder. Then inside this static folder create another folder called 'css' then inside this css folder create a file called base.css (follow below code).
+* now create a static folder and place it outside the django_bookstore folder. Then inside this static folder create another folder called 'css' then inside this css folder create a file called base.css (follow below code).
 
 (django_project)$`mkdir static`
 
