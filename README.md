@@ -4,11 +4,11 @@ Welcome to my Django Bookstore project! This is a simple web application where u
 
 ## Getting Started
 
-1. **Installation:** Clone this repository to your local machine using `git clone https://github.com/vikasMotwani/bookstore.git`.
+1. **Installation:** Clone this repository to your local machine using `git clone https://github.com/vikasMotwani/django_bookstore.git`.
 
 2. **Setup Environment:** Create a virtual environment and install the required dependencies using `python -m venv venv` and `pip install -r requirements.txt`.
 
-3. **Database Setup:** Configure your database in the `bookstore/settings.py` file and run migrations using `python manage.py migrate`.
+3. **Database Setup:** Configure your database in the `django_bookstore/settings.py` file and run migrations using `python manage.py migrate`.
 
 4. **Run the Server:** Start the development server with `python manage.py runserver`.
 
@@ -32,7 +32,4 @@ Welcome to my Django Bookstore project! This is a simple web application where u
 
 I welcome contributions and feedback! Feel free to fork the repository and submit pull requests with your enhancements or bug fixes.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
